@@ -38,6 +38,6 @@ app.post('/favorite', function (req, res, next) {
   }
 });
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
 });
