@@ -35,7 +35,7 @@ const omdbSearch = data => {
 
     // Set the query url to include the title passed to the function. Concatenate
     // using template literals in ES6 with backticks.
-    let queryUrl = `http://www.omdbapi.com/?s=${data}&page=1&apikey=6e2186b9`;
+    let queryUrl = `https://www.omdbapi.com/?s=${data}&page=1&apikey=6e2186b9`;
 
     //Use the Javascript Fetch API to retrieve the data. WILL NOT WORK in I.E.
     fetch(queryUrl).then(response => {
@@ -87,7 +87,7 @@ const showDetails = (event, search) => {
 
     let title = event.target.innerText;
     //Use the 't' option to get more details from the OMDB API.
-    let detailUrl = `http://www.omdbapi.com/?t=${title}&page=1&apikey=6e2186b9`;
+    let detailUrl = `https://www.omdbapi.com/?t=${title}&page=1&apikey=6e2186b9`;
 
     fetch(detailUrl).then(function (response) {
         return response.json();
