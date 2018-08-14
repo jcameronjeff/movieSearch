@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.json());
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.get('/', function (req, res) {
+  res.render('index')
+});
 
 app.get('/favorites', function (req, res) {
   var data = fs.readFileSync('./data.json');
@@ -33,9 +35,6 @@ app.post('/favorite', function (req, res, next) {
     return res.send(data);
   }
 });
-
-// app.post('/favorite', function (req, res) {   console.log(req.body.title);
-// });
 
 app.listen(3000, function () {
   console.log("Listening on port 3000");

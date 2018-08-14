@@ -10,4 +10,4 @@
 
 - Front-End is written in Vanilla ES6 Javascript because of its applicability to preparing students for frameworks. (public/main.js)
 
-#### Demo: Demo available at [http://moviesearch-jeffcameron.herokuapp.com](http://moviesearch-jeffcameron.herokuapp.com)
+#### Demo: Demo available at [https://moviesearch-jeffcameron.herokuapp.com](https://moviesearch-jeffcameron.herokuapp.com)
