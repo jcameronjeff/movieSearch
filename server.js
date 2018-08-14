@@ -5,14 +5,15 @@ var path = require('path');
 var request = require("request");
 var bodyParser = require("body-parser");
 
-app.use(express.static(path.join(__dirname, '/public')));
+// Sets an initial port.
+var PORT = process.env.PORT || 3000;
+
+// Sets up the Express app to handle data parsing
+
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-app.use(express.json());
-
-app.get('/', function (req, res) {
-  res.render('index.html')
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/favorites', function (req, res) {
   var data = fs.readFileSync('./data.json');
@@ -37,5 +38,5 @@ app.post('/favorite', function (req, res, next) {
 });
 
 app.listen(3000, function () {
-  console.log("Listening on port 3000");
+  console.log(`Listening on port ${PORT}`);
 });
