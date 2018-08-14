@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 
 app.get('/', function (req, res) {
-  res.render('index')
+  res.render('index.html')
 });
 
 app.get('/favorites', function (req, res) {
