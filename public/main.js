@@ -4,9 +4,6 @@ const movieTitle = document.getElementById('movieSearch');
 const resultsContainer = document.getElementById('results');
 const detailsContainer = document.getElementById('details');
 
-// Create an empty array to hold our list of titles.
-let movieList = [];
-
 // Helper Function to clear DOM elements before adding anything.
 const emptyDivs = () => {
     resultsContainer.innerHTML = '';
@@ -143,8 +140,7 @@ const save = event => {
 // Get the user favorites from the server and pass them to the show list
 // function.
 const showFavorites = () => {
-    movieList = [];
-
+ 
     fetch("/favorites", {
             method: 'GET', // or 'PUT'
             headers: {
